@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS sistema_apostas;
+USE sistema_apostas;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    saldo DOUBLE NOT NULL DEFAULT 0.0,
+    ehAdmin BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE eventos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    timeCasa VARCHAR(100) NOT NULL,
+    timeFora VARCHAR(100) NOT NULL,
+    oddCasa DOUBLE NOT NULL,
+    oddEmpate DOUBLE NOT NULL,
+    oddFora DOUBLE NOT NULL,
+    status ENUM('ABERTO', 'ENCERRADO') NOT NULL DEFAULT 'ABERTO',
+    resultadoFinal ENUM('CASA', 'EMPATE', 'FORA') NULL
+);
+
+CREATE TABLE apostas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuarioId INT NOT NULL,
+    eventoId INT NOT NULL,
+    valorApostado DOUBLE NOT NULL,
+    palpite ENUM('CASA', 'EMPATE', 'FORA') NOT NULL,
+    status ENUM('PENDENTE', 'GANHA', 'PERDIDA') NOT NULL DEFAULT 'PENDENTE',
+    ganhoPotencial DOUBLE NOT NULL,
+    FOREIGN KEY (usuarioId) REFERENCES usuarios(id),
+    FOREIGN KEY (eventoId) REFERENCES eventos(id)
+);
