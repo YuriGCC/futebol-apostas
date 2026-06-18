@@ -14,7 +14,7 @@ public class Evento {
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public String getTimeCasa() { return timeCasa; }
-    public void setTimeCasa(String timeCasa) { this.this.timeCasa = timeCasa; }
+    public void setTimeCasa(String timeCasa) { this.timeCasa = timeCasa; }
     public String getTimeFora() { return timeFora; }
     public void setTimeFora(String timeFora) { this.timeFora = timeFora; }
     public double getOddCasa() { return oddCasa; }
