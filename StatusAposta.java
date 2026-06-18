@@ -1,0 +1,1 @@
+public enum StatusAposta { PENDENTE, GANHA, PERDIDA }
