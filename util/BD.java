@@ -1,3 +1,4 @@
+package util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -5,7 +6,7 @@ import java.sql.SQLException;
 public class BD {
     private static final String URL = "jdbc:mysql://localhost:3306/sistema_apostas";
     private static final String LOGIN = "root";
-    private static final String SENHA = "sua_senha_aqui";
+    private static final String SENHA = "321ewqewq321#Y";
     private Connection connection;
 
     public boolean getConnection() {

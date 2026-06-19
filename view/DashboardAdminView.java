@@ -51,7 +51,6 @@ public class DashboardAdminView extends JFrame {
         btnSair.setBounds(150, 180, 100, 30);
         add(btnSair);
 
-        // Ações dos botões
         btnCadastrarEvento.addActionListener(e -> abrirTelaCadastroEvento());
         btnEncerrarEvento.addActionListener(e -> abrirTelaEncerramentoEvento());
         
@@ -129,7 +128,7 @@ public class DashboardAdminView extends JFrame {
                 Evento eventoSelecionado = eventosAbertos.get(indexSelecionado);
                 TipoPalpite resultadoFinal = (TipoPalpite) comboResultado.getSelectedItem();
 
-                // Chama a regra de negócio que encerra o evento e paga as apostas ganhas
+            
                 financeiroService.encerrarEvento(eventoSelecionado, resultadoFinal);
                 
                 JOptionPane.showMessageDialog(this, "Evento encerrado e apostas processadas com sucesso!");

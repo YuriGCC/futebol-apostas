@@ -1,10 +1,14 @@
+package view;
 import javax.swing.*;
+
+import dao.UsuarioDAO;
+import model.Usuario;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginView extends JFrame {
     
-    // Componentes Semânticos do Swing
     private JTextField txtLogin;
     private JPasswordField txtSenha;
     private JButton btnEntrar;
@@ -14,8 +18,7 @@ public class LoginView extends JFrame {
         setTitle("Sistema de Apostas - Login");
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(null); // Usando null layout para simplificar o exemplo, mas recomendo LayoutManagers
-        
+        setLayout(null); 
         inicializarComponentes();
     }
 
